@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vas-deploy
+  namespace: vas    
+  
+  labels:
+    app: vas
+    
+   
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vas
+  template:
+    metadata:
+      
+      labels:
+        app: vas     
+      
+
+    spec:
+      containers:
+        - name: vas
+          image: jian1114/vas
+          ports:
+          - name: http
+            containerPort: 8080
+  

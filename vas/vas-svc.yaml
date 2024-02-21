@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: vas-svc
+  namespace: vas
+spec:
+  selector:
+    app: vas
+  
+  ports:
+  - protocol: TCP
+    name: http
+    port: 8080
+    targetPort: http
